@@ -1,0 +1,31 @@
+.feature-box {
+  /*An opacity of 1 means the element is fully opaque, i.e. not transparent at all.
+An opacity of 0 means the element is fully transparent.*/
+  background-color: rgba(
+    $color-white,
+    0.8
+  ); //opacity: 80%, we want 80% of color to be white, the remaing 20% is what you can see through the color(transparent)
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 2rem rgba($color-black, 0.2);
+  font-size: 1.6rem;
+
+  transition: transform 0.3s;
+
+  &__icon {
+    font-size: 6rem;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.05);
+  }
+}

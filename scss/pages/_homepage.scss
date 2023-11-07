@@ -1,0 +1,75 @@
+.section-about {
+  background-color: $color-grey-light1;
+  padding: 25rem 0;
+  margin-top: -25vh;
+
+  .paragraph {
+    color: $color-grey-dark;
+  }
+}
+
+.section-feature {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+
+  margin-top: -12rem;
+  transform: skewY(-7deg);
+
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tour {
+  padding: 20rem 0;
+  background-color: $color-grey-light1;
+  margin-top: -12rem;
+}
+
+.section-story {
+  padding: 20rem 0;
+
+  position: relative;
+}
+
+.section-booking {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+// matter of reusing pieces and not reusing piece
+// only the form could be reuse should be spilt/extract as a component
+// other part of the section will be unique to that section
+.booking {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: $border-radius-sm;
+  //background already dark , we should make shadow darker
+  box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+  // add a fixed temporary height for testing purpose, later we want the content of the box to define the height
+  height: 50rem;
+  padding: 1rem 0;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    box-sizing: border-box;
+  }
+}

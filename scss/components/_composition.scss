@@ -1,0 +1,43 @@
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    border-radius: 2px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+
+    // as soon as we set position to absolute on an element, this element will be placed according to  a reference
+    // and the reference is the first parent element it encounter which has position set to relative
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+
+    &--p1 {
+      top: -2rem;
+      left: 0;
+    }
+    &--p2 {
+      top: 2rem;
+      right: 0;
+    }
+
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+    }
+    
+
+    //on hover, get bigger, closer and move up a bit and stack on top of other images
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.1);
+      box-shadow: 0 2rem 5rem rgba($color-black, 0.4); // make img closer up user on hover, should cast bigger shadow
+      z-index: 20; //stack on top of each other
+    }
+  }
+
+  //any photo that is not hover shrink
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}

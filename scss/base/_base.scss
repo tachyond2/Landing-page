@@ -1,0 +1,30 @@
+*,
+*::after *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* easy to calculate, 1rem equal to root element font size */
+  /* specify value like this overwrite the  browser font-size setting that user can manually change 
+    font-size: 10px;*/
+  font-size: 62.5%;
+  //all length font size all of this measurement will scale up or down according this font size
+  /* 10(we want) / 16(browser default font-size) = 0.625 */
+
+  @include respond(tab-landscape) {
+    font-size: 56.25%; //1rem = 9px 9/16 = .5625
+  }
+  @include respond(tab-portrait) {
+    font-size: 50%; //1rem = 8px  8/16 = .5
+  }
+
+  // @include respond(big-desktop) {
+  //   font-size: 75%; //1rem = 12px  12/16 = .75
+  // } 
+}
+
+body {
+  box-sizing: border-box;
+}

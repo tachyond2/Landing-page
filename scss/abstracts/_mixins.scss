@@ -1,0 +1,52 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// pros and cons of varied ways of writing media query
+
+/*
+@media (max-width: 600px){
+    .story{}
+}*/
+
+/*
+// not repeat our selector for different  screen size
+.story{
+    @media (max-width:600px){widht:60%;}
+}
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-portrait {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint == tab-landscape {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    } //1800px
+  }
+}
